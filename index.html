@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="translate" id="en">en</button>
+    <button class="translate" id="es">es</button>
+    <ul>
+        <li class="lang" key="home">Home</li>
+        <li class="lang" key="about">About</li>
+        <li class="lang" key="contact">Contact</li>
+    </ul>
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript">
+        var arrLang = {
+                'en': {
+                    'home': 'Home',
+                    'about': 'About',
+                    'contact': 'Contact'
+                },
+                'es': {
+                    'home': 'Casa',
+                    'about': 'Acerca',
+                    'contact': 'Contacto'
+                }
+            };
+
+            $(function () {
+                $('translate').click(function () {
+                    var lang = $(this).attr('id');
+                    $('.lang').each(function (index, element) {
+                        $(this).text(arrLang[lang][$(this).attr('key')]);
+                    })
+                })
+            })
+    </script>
+
+</body>
+</html>
